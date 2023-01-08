@@ -28,8 +28,7 @@ class AuthController extends Controller
         if (Auth::attempt($data)) {
             return redirect('admin/dashboard');
         } else {
-            Session('error', 'Email atau Password tidak sesuai');
-            return redirect('admin/login');
+            return redirect('admin/login')->with('error', 'Email atau Password tidak sesuai');
         }
     }
 
