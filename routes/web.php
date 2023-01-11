@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BarangControllers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,5 +23,5 @@ Route::get('/', function () {
 // AUTHENTIKASI
 Route::get('admin/login', [AuthController::class, 'login'])->name('login');
 Route::post('login-action', [AuthController::class, 'loginAction'])->name('loginAction');
-Route::get('admin/dashboard', [AdminController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('admin/barang', [BarangControllers::class, 'index'])->name('barang')->middleware('auth');
 Route::get('logout-action', [AuthController::class, 'logoutAction'])->name('logoutAction')->middleware('auth');
