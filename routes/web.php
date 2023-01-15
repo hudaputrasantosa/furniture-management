@@ -23,5 +23,12 @@ Route::get('/', function () {
 // AUTHENTIKASI
 Route::get('admin/login', [AuthController::class, 'login'])->name('login');
 Route::post('login-action', [AuthController::class, 'loginAction'])->name('loginAction');
-Route::get('admin/barang', [BarangControllers::class, 'index'])->name('barang')->middleware('auth');
 Route::get('logout-action', [AuthController::class, 'logoutAction'])->name('logoutAction')->middleware('auth');
+
+//BARANG
+Route::get('admin/barang', [BarangControllers::class, 'index'])->name('barang')->middleware('auth');
+Route::get('barang/create', [BarangControllers::class, 'create'])->name('createBarang');
+Route::post('barang/store', [BarangControllers::class, 'store'])->name('storeBarang');
+Route::get('barang/edit/{id}', [BarangControllers::class, 'edit'])->name('barangEdit');
+Route::put('barang/update/{id}', [BarangControllers::class, 'update'])->name('updateBarang');
+Route::delete('barang/hapus/{id}', [BarangControllers::class, 'destroy'])->name('deleteBarang');
