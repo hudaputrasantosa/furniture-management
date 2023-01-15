@@ -31,18 +31,18 @@
                          </button>
                     </div>
                     <div>
-                         <a class="navbar-brand brand-logo" href="index.html">
-                              <img src="{{asset('images/logo.svg')}}" alt="logo" />
+                         <a class="navbar-brand brand-logo" href="#">
+                              <img src="{{asset('images/furnitura-side.svg')}}" alt="logo" />
                          </a>
-                         <a class="navbar-brand brand-logo-mini" href="index.html">
-                              <img src="{{asset('images/logo-mini.svg')}}" alt="logo" />
+                         <a class="navbar-brand brand-logo-mini" href="#">
+                              <img src="{{asset('images/furnitura-logo.svg')}}" alt="logo" />
                          </a>
                     </div>
                </div>
                <div class="navbar-menu-wrapper d-flex align-items-top">
                     <ul class="navbar-nav">
                          <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-                              <h2 class="welcome-text">Good Morning, <span class="text-black fw-bold">John Doe</span></h2>
+                              <h2 class="welcome-text">Selamat Datang di Dashboard Panel, <span class="text-black fw-bold">{{ auth()->user()->name }}</span></h2>
                          </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
@@ -212,8 +212,8 @@
      <script src="{{asset('vendors/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
      <script src="{{asset('vendors/progressbar.js/progressbar.min.js')}}"></script>
      <script src="{{asset('js/off-canvas.js')}}"></script>
-     <script src="{{asset('js/hoverable-collapse.js"')}}></script>
-     <script src=" {{asset('js/template.js')}}"></script>
+     <script src="{{asset('js/hoverable-collapse.js')}}"></script>
+     <script src="{{asset('js/template.js')}}"></script>
      <script src="{{asset('js/settings.js')}}"></script>
      <script src="{{asset('js/todolist.js')}}"></script>
      <script src="{{asset('js/jquery.cookie.js')}}" type="text/javascript"></script>
