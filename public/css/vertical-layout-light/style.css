@@ -13656,10 +13656,12 @@ fieldset:disabled .swal2-modal .swal2-buttonswrapper .swal2-styled,
   font-size: 0.812rem;
   list-style: none;
   background-color: transparent;
+  border-width : 0;
 }
 
 .breadcrumb-item + .breadcrumb-item {
   padding-left: 0.5rem;
+  border-width : 0;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -13667,10 +13669,12 @@ fieldset:disabled .swal2-modal .swal2-buttonswrapper .swal2-styled,
   padding-right: 0.5rem;
   color: #6c757d;
   content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
+  border-width : 0;
 }
 
 .breadcrumb-item.active {
   color: #495057;
+  border-width : 0;
 }
 
 .pagination {
@@ -22325,10 +22329,12 @@ code {
 /* Breadcrumbs */
 .breadcrumb {
   border: 1px solid #dee2e6;
+  border-width : 0;
 }
 
 .breadcrumb .breadcrumb-item {
   font-size: 0.812rem;
+  border-width : 0;
 }
 
 .breadcrumb.breadcrumb-custom {
@@ -22343,6 +22349,7 @@ code {
   color: #000000;
   display: inline-block;
   vertical-align: top;
+  border-width : 0;
 }
 
 .breadcrumb.breadcrumb-custom .breadcrumb-item:last-child {

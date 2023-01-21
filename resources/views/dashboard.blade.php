@@ -17,6 +17,7 @@
      <link rel="stylesheet" href="{{asset('js/select.dataTables.min.css')}}">
      <link rel="stylesheet" href="{{asset('css/vertical-layout-light/style.css')}}">
      <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" />
+     <link rel="stylesheet" href="{{ asset('jquery/jquery-3.6.3.min.js') }}">
 </head>
 
 <body>
@@ -140,18 +141,19 @@
                          </li>
                          <li class="nav-item nav-category">Ketersediaan Barang</li>
                          <li class="nav-item">
-                              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                              <a href="{{ route('barang') }}" class="nav-link">
                                    <i class="menu-icon mdi mdi-floor-plan"></i>
                                    <span class="menu-title">Barang</span>                     
                               </a>
                               <li class="nav-item">
-                                   <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                                   <a class="nav-link" data-bs-toggle="collapse" href="#ui-b" aria-expanded="false" aria-controls="ui-basic">
                                         <i class="menu-icon mdi mdi-floor-plan"></i>
                                         <span class="menu-title">Pemesanan</span>                     
                                    </a>                        
                               </li>
                               <li class="nav-item">
-                                   <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                                   {{-- <a href="{{ route('penjualan') }}">Jual</a> --}}
+                                   <a href="{{ route('penjualan') }}" class="nav-link">
                                         <i class="menu-icon mdi mdi-floor-plan"></i>
                                         <span class="menu-title">Penjualan</span>                     
                                    </a>                        

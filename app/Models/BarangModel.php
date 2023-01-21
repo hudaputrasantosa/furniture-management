@@ -13,4 +13,11 @@ class BarangModel extends Model
     protected $table = 'barang';
     protected $primaryKey = 'kode_barang';
     protected $fillable = ['nama_barang', 'harga', 'stok', 'foto', 'deskripsi', 'updated_at', 'created_at'];
+
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function ($query, $search) {
+            return $query->where('nama_barang', 'like', '%' . $search . '%')->orWhere('deskripsi', 'like', '%' . $search . '%');
+        });
+    }
 }

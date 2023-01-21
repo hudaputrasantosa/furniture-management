@@ -4779,19 +4779,23 @@ textarea.form-control-lg {
   padding: 0 0;
   margin-bottom: 1rem;
   list-style: none;
+  border-width : 0;
 }
 
 .breadcrumb-item + .breadcrumb-item {
   padding-left: 0.5rem;
+  border-width : 0;
 }
 .breadcrumb-item + .breadcrumb-item::before {
   float: left;
   padding-right: 0.5rem;
   color: #6c757d;
   content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
+  border-width : 0;
 }
 .breadcrumb-item.active {
   color: #6c757d;
+  border-width : 0;
 }
 
 .pagination {

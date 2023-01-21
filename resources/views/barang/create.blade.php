@@ -1,6 +1,9 @@
 @extends('dashboard')
 
 @section('main-content')
+<div class="breadcrumb-section">
+  {{ Breadcrumbs::render('create') }}
+</div>
 <div class="col grid-margin stretch-card">
      <div class="card">
        <div class="card-body">

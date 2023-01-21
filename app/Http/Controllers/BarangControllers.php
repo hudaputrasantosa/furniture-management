@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BarangModel;
 use Illuminate\Http\Request;
+use function Ramsey\Uuid\v1;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,8 +17,11 @@ class BarangControllers extends Controller
      */
     public function index()
     {
-        $barangs = BarangModel::all();
-        return view('barang.barang', ['barangs' => $barangs]);
+
+        // $barangs = BarangModel::all();
+        return view('barang.barang', [
+            'barangs' => BarangModel::latest()->filter(request(['search']))->paginate(6)
+        ]);
     }
 
     /**
@@ -71,7 +75,6 @@ class BarangControllers extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -146,6 +149,6 @@ class BarangControllers extends Controller
         Storage::disk('local')->delete('public/images/barang/' . $barang->foto);
         $barang->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Data berhasil Dihapus');
     }
 }
