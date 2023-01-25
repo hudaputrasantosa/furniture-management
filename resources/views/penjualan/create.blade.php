@@ -50,7 +50,7 @@
               <label>Nama Barang</label>
               <select class="form-control" name="pilihBarang">
                 @foreach($barangs as $barang)
-                <option value="{{ $barang->kode_barang }}">{{ $barang->nama_barang }}</option>
+                <option value="{{ $barang->kode_barang }}">{{ $barang->nama_barang.'- Rp. '.$barang->harga }}</option>
                 @endforeach
               </select>
             </div>

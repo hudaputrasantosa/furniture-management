@@ -66,7 +66,7 @@
                                         </div>
                                    </div>
                                    <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Lihat Selengkapnya</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ route('create-pemesanan') }}">Lihat Selengkapnya</a></div>
                                    </div>
                               </div>
                               <!-- Product actions-->

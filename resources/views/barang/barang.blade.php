@@ -57,7 +57,7 @@
                                         <td>{{ $barang->deskripsi }}</td>
                                         <td>
                                             
-                                                <form action="{{ url('barang/hapus/'.$barang->kode_barang) }}" onclick=" return confirm('apakah yakin?')" method="POST">
+                                                <form action="{{ url('barang/hapus/'.$barang->kode_barang) }}" onclick="return confirm('Apakah yakin untuk meghapus/mengedit?')" method="POST">
                                                   <a href="{{ route('edit', $barang->kode_barang) }}" class="btn btn-warning btn-sm">
                                                        <i class="mdi mdi-pencil"></i>
                                                      </a>

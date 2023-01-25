@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BarangControllers;
+use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\PenjualanController;
 use App\Models\BarangModel;
 use Illuminate\Support\Facades\Route;
@@ -44,3 +45,8 @@ Route::post('penjualan/store', [PenjualanController::class, 'store'])->name('sto
 Route::get('penjualan/edit/{id}', [PenjualanController::class, 'edit'])->name('edit-penjualan');
 Route::put('penjualan/update/{id}', [PenjualanController::class, 'update'])->name('update-penjualan');
 Route::delete('penjualan/hapus/{id}', [PenjualanController::class, 'destroy'])->name('delete-penjualan');
+
+//PEMESANAN
+Route::get('admin/pemesanan', [PemesananController::class, 'index'])->name('pemesanan');
+Route::get('pemesanan/create', [PemesananController::class, 'create'])->name('create-pemesanan');
+Route::post('pemesanan/store', [PemesananController::class, 'store'])->name('store-pemesanan');

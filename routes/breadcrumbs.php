@@ -4,7 +4,7 @@ use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
 
 // BARANG
 Breadcrumbs::for('home', function ($trail) {
-     $trail->push('Home', route('barang'));
+     $trail->push('Barang', route('barang'));
 });
 Breadcrumbs::for('create', function ($trail) {
      $trail->parent('home');
@@ -26,6 +26,10 @@ Breadcrumbs::for('create-penjualan', function ($trail) {
 });
 
 
+// PEMESANAN
+Breadcrumbs::for('pemesanan', function ($trail) {
+     $trail->push('Pemesanan', route('pemesanan'));
+});
 
 // home > products > product detail
 Breadcrumbs::for('product_name', function ($trail) {

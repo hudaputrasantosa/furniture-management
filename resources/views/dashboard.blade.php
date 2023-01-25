@@ -33,10 +33,10 @@
                     </div>
                     <div>
                          <a class="navbar-brand brand-logo" href="#">
-                              <img src="{{asset('images/furnitura-side.svg')}}" alt="logo" />
+                              <img src="{{asset('images/logo-admin.png')}}" alt="logo" />
                          </a>
                          <a class="navbar-brand brand-logo-mini" href="#">
-                              <img src="{{asset('images/furnitura-logo.svg')}}" alt="logo" />
+                              <img src="{{asset('images/logo-saja.png')}}" alt="logo" />
                          </a>
                     </div>
                </div>
@@ -145,12 +145,12 @@
                                    <i class="menu-icon mdi mdi-floor-plan"></i>
                                    <span class="menu-title">Barang</span>                     
                               </a>
-                              <li class="nav-item">
-                                   <a class="nav-link" data-bs-toggle="collapse" href="#ui-b" aria-expanded="false" aria-controls="ui-basic">
+                              {{-- <li class="nav-item">
+                                   <a class="nav-link" href="{{ route('pemesanan') }}">
                                         <i class="menu-icon mdi mdi-floor-plan"></i>
                                         <span class="menu-title">Pemesanan</span>                     
                                    </a>                        
-                              </li>
+                              </li> --}}
                               <li class="nav-item">
                                    {{-- <a href="{{ route('penjualan') }}">Jual</a> --}}
                                    <a href="{{ route('penjualan') }}" class="nav-link">

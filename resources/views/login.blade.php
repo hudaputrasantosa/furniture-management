@@ -29,7 +29,7 @@
                               @endif
                               <div class="auth-form-light text-left py-5 px-4 px-sm-5 text-center">
                                    <div class="brand-logo">
-                                        <img src="{{ asset('images/furnitura.svg') }}" width="100%" alt="logo">
+                                        <img src="{{ asset('images/logo-login.png') }}" alt="logo">
                                    </div>
                                    <h4>Login for Admin</h4>
                                         <h6 class="fw-light">Login terlebih dahulu untuk melanjutkan</h6>
