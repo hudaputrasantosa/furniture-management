@@ -49,7 +49,7 @@
                     <ul class="navbar-nav ms-auto">
                       
                          <li class="nav-item d-none d-lg-block">
-                              <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
+                              <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker" aria-readonly="">
                                    <span class="input-group-addon input-group-prepend border-right">
                                         <span class="icon-calendar input-group-text calendar-icon"></span>
                                    </span>
@@ -144,29 +144,29 @@
                               <a href="{{ route('barang') }}" class="nav-link">
                                    <i class="menu-icon mdi mdi-floor-plan"></i>
                                    <span class="menu-title">Barang</span>                     
-                              </a>
-                              {{-- <li class="nav-item">
-                                   <a class="nav-link" href="{{ route('pemesanan') }}">
-                                        <i class="menu-icon mdi mdi-floor-plan"></i>
-                                        <span class="menu-title">Pemesanan</span>                     
-                                   </a>                        
-                              </li> --}}
+                              </a>                       
                               <li class="nav-item">
                                    {{-- <a href="{{ route('penjualan') }}">Jual</a> --}}
                                    <a href="{{ route('penjualan') }}" class="nav-link">
                                         <i class="menu-icon mdi mdi-floor-plan"></i>
                                         <span class="menu-title">Penjualan</span>                     
                                    </a>                        
-                              </li>                        
+                              </li>  
+                                    <li class="nav-item">
+                                   <a class="nav-link" href="{{ route('keuangan') }}">
+                                        <i class="menu-icon mdi mdi-floor-plan"></i>
+                                        <span class="menu-title">Laporan Keuangan</span>                     
+                                   </a>                        
+                              </li>                      
                          </li>
                          <li class="nav-item nav-category">Pengelolaan Barang</li>
                          <li class="nav-item">
-                              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                              <a class="nav-link" href="{{ route('pembelian') }}">
                                    <i class="menu-icon mdi mdi-floor-plan"></i>
                                    <span class="menu-title">Pembelian</span>                     
                               </a>
                               <li class="nav-item">
-                                   <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                                   <a class="nav-link" href="{{ route('supplier') }}">
                                         <i class="menu-icon mdi mdi-floor-plan"></i>
                                         <span class="menu-title">Supplier</span>                     
                                    </a>                        

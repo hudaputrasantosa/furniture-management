@@ -6,6 +6,8 @@ use App\Models\BarangModel;
 use App\Models\PenjualanModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use LaravelDaily\Invoices\Classes\Buyer;
+use LaravelDaily\Invoices\Classes\InvoiceItem;
 
 class PenjualanController extends Controller
 {
@@ -16,7 +18,7 @@ class PenjualanController extends Controller
      */
     public function index()
     {
-        $penjualan = PenjualanModel::all();
+        $penjualan = PenjualanModel::join('barang', 'penjualan.kode_barang', '=', 'barang.kode_barang')->filter(request(['search']))->paginate(6);
 
 
         return view('penjualan.penjualan', [
@@ -89,6 +91,32 @@ class PenjualanController extends Controller
         // if ($simpanData) {
         //     return redirect()->route('penjualan')->with('success', 'data berhasil disimpan');
         // }
+    }
+
+    public function cetak($id)
+    {
+        $penjualan_user = PenjualanModel::findOrFail($id);
+
+        $customer = new Buyer([
+            'name'          => $penjualan_user->nama_pembeli,
+            'custom_fields' => [
+                'no_telepon' => $penjualan_user->no_telepon,
+            ],
+        ]);
+        $title = [
+            'name' => $penjualan_user->nama_barang
+        ];
+
+        $item = (new InvoiceItem())->title('price')->pricePerUnit(2);
+
+        $invoice = Invoice::make()
+            ->buyer($customer)
+            // ->discountByPercent(10)
+            // ->taxRate(15)
+            // ->shipping(1.99)
+            ->addItem($item);
+
+        return $invoice->stream();
     }
 
     /**

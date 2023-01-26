@@ -2,7 +2,7 @@
 
 @section('main-content')
 <div class="breadcrumb-section" style="border-width : 0;">
-     {{ Breadcrumbs::render('home') }}
+     {{ Breadcrumbs::render('pembelian') }}
 </div>
 @if (session('error'))
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -15,7 +15,7 @@
      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
-<form action="{{ route('barang') }}" method="get" role="search">
+<form action="{{ route('pembelian') }}" method="get" role="search">
 <div class="input-group mb-3">
      <input type="text" class="form-control" placeholder="Cari ..." name="search" aria-label="Recipient's username" aria-describedby="button-addon2">
      <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
@@ -25,12 +25,11 @@
      <div class="col-lg-12 grid-margin stretch-card">
           <div class="card">
                <div class="card-body">
-                    <h4 class="card-title">Data Barang</h4>
-                    <a href="{{ route('create') }}" type="button" class="btn btn-primary btn-icon-text text-white">
+                    <h4 class="card-title">Data Supplay Barang</h4>
+                    <a href="{{ route('create-pembelian') }}" type="button" class="btn btn-primary btn-icon-text text-white">
                          <i class="ti-file btn-icon-prepend"></i>
                          Tambah Data
                        </a>
-                       <a href="{{ route('lihat-invoice') }}">Cek Invoice</a>
                     <div class="table-responsive">
                          <table class="table table-striped centered">
                               <thead>
@@ -38,28 +37,29 @@
                                         {{-- <th>Kode</th> --}}
                                         <th>Nama</th>
                                         <th>Harga</th>
-                                        <th>Stok</th>
+                                        <th>Kuantitas</th>
                                         <th>Foto</th>
                                         <th>Deskripsi</th>
+                                        <th>Supplier</th>
                                         <th>Aksi</th>
                                       
                                    </tr>
                               </thead>
                               <tbody>
-                                   @foreach($barangs as $barang)
+                                   @foreach($pembelians as $pembelian)
                                    <tr>
-                                        {{-- <td>{{ $barang->kode_barang }}</td> --}}
-                                        <td>{{ $barang->nama_barang }}</td>
-                                        <td>{{ $barang->harga }}</td>
-                                        <td>{{ $barang->stok }}</td>
+                                        <td>{{ $pembelian->nama_barang }}</td>
+                                        <td>{{ $pembelian->harga_beli}}</td>
+                                        <td>{{ $pembelian->kuantitas }}</td>
                                         <td>
-                                        <img src=" {{ asset('storage/images/barang/'.$barang->foto) }}" alt=""> 
+                                        <img src=" {{ asset('storage/images/barang/'.$pembelian->foto) }}" alt=""> 
                                         </td>
-                                        <td>{{ $barang->deskripsi }}</td>
+                                        <td>{{ $pembelian->deskripsi }}</td>
+                                        <td>{{ $pembelian->nama_supplier }}</td>
                                         <td>
                                             
-                                                <form action="{{ url('barang/hapus/'.$barang->kode_barang) }}" onclick="return confirm('Apakah yakin untuk meghapus/mengedit?')" method="POST">
-                                                  <a href="{{ route('edit', $barang->kode_barang) }}" class="btn btn-warning btn-sm">
+                                                <form action="{{ url('barang/hapus/'.$pembelian->id_pembelian) }}" onclick="return confirm('Apakah yakin untuk meghapus/mengedit?')" method="POST">
+                                                  <a href="{{ route('edit', $pembelian->id_pembelian) }}" class="btn btn-warning btn-sm">
                                                        <i class="mdi mdi-pencil"></i>
                                                      </a>
                                                      
@@ -69,7 +69,7 @@
                                                        <i class="mdi mdi-close-circle"></i>
                                                   </button>
                                                 </form>
-                                                {{-- <a href="{{ url('barang/hapus/'.$barang->kode_barang) }}">Apuss</a> --}}
+                                               
                                                
                                         </td>
                                    </tr>
@@ -78,7 +78,7 @@
                          </table>
                     </div>
                     <div class="mt-4">
-                         {{ $barangs->links() }}
+                         {{-- {{ $pembelians->links() }} --}}
                     </div>
                    <div class="mt-4">
                    </div>

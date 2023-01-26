@@ -34,14 +34,14 @@
                          <table class="table table-striped centered">
                               <thead>
                                    <tr>
-                                        {{-- <th>Kode</th> --}}
+                                       
                                         <th>Invoice</th>
                                         <th>Pembeli</th>
                                         <th>Umur</th>
                                         <th>Telepon</th>
                                         <th>Alamat</th>
-                                        <th>kode Barang</th>
-                                        <th>Total Pembelian</th>
+                                        <th>Barang</th>
+                                        <th>Total</th>
                                         <th>Aksi</th>
                                       
                                    </tr>
@@ -54,20 +54,20 @@
                                         <td>{{ $penjualan->umur }}</td>
                                         <td>{{ $penjualan->no_telepon }}</td>
                                         <td>{{ $penjualan->alamat }}</td>
-                                        <td>{{ $penjualan->kode_barang }}</td>
+                                        <td>{{ $penjualan->nama_barang }}</td>
                                         <td>{{ $penjualan->total_harga }}</td>
                                      
                                            <td> 
                                                 <form action="" onclick=" return confirm('apakah yakin?')" method="POST">
-                                                  {{-- <a href="{{ route('') }}" class="btn btn-warning btn-sm">
+                                                  <a href="{{ route('cetak-invoice', $penjualan->id_penjualan) }}" class="btn btn-primary btn-sm text-white">
                                                        <i class="mdi mdi-pencil"></i>
                                                      </a>
                                                      
                                                   @method('delete')
-                                                  @csrf --}}
-                                                  <button class="btn btn-primary btn-rounded">
+                                                  @csrf
+                                                  {{-- <button class="btn btn-primary btn-rounded text-white">
                                                        Cetak Invoice
-                                                  </button>
+                                                  </button> --}}
                                                 </form> 
                                              
                                                
@@ -78,7 +78,7 @@
                          </table>
                     </div>
                     <div class="mt-4">
-                         {{-- {{ $barangs->links() }} --}}
+                         {{ $penjualans->links() }}
                     </div>
                    <div class="mt-4">
                    </div>
