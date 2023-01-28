@@ -60,7 +60,7 @@
                                            <td> 
                                                 <form action="" onclick=" return confirm('apakah yakin?')" method="POST">
                                                   <a href="{{ route('cetak-invoice', $penjualan->id_penjualan) }}" class="btn btn-primary btn-sm text-white">
-                                                       <i class="mdi mdi-pencil"></i>
+                                                       Cetak Invoice
                                                      </a>
                                                      
                                                   @method('delete')
